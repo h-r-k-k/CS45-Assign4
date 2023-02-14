@@ -1,3 +1,29 @@
+import random
+
+def get_winner(input):
+    """
+    given a user's input selection of either rock/paper/scissor, let the computer pick a thing, print out the computer's selection,
+    and return the name of the winner.
+    """
+    computer_choice = random.choice(['rock', 'paper', 'scissors'])
+    print("Computer's choice: " + computer_choice)
+    winner = "none"
+    if input == 'rock':
+        if computer_choice == 'paper':
+            winner = "computer"
+        elif computer_choice == 'scissors':
+            winner = "player"
+    elif input == 'paper':
+        if computer_choice == 'scissors':
+            winner = "computer"
+        elif computer_choice == 'rock':
+            winner = "player"
+    else:                                   # input == 'scissors'
+        if computer_choice == 'rock':
+            winner = "computer"
+        elif computer_choice == 'paper':
+            winner = "player"
+    return winner
 
 
 def main():
@@ -8,7 +34,7 @@ def main():
     print('now, your pick! (remember to type lower-case letters): ')
     # get the user input (assume the user will type in rock/paper/scissors (lower-case))
     x = input()
-
+    y = get_winner(x)
 
 
 if __name__ == '__main__':

@@ -35,6 +35,11 @@ def main():
     # get the user input (assume the user will type in rock/paper/scissors (lower-case))
     x = input()
     y = get_winner(x)
+    # declare a winner or a tie
+    if y == "none":
+        print('There is a tie... \n')
+    else:
+        print('~~~~The winner is: ' + y + '~~~~\n')
 
 
 if __name__ == '__main__':

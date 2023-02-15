@@ -1,5 +1,7 @@
 import random
 
+# this is the experimental no-ties version of rock-paper-scissors!!
+
 def get_winner(input):
     """
     given a user's input selection of either rock/paper/scissor, let the computer pick a thing, print out the computer's selection,
@@ -36,10 +38,19 @@ def main():
     x = input()
     y = get_winner(x)
     # declare a winner or a tie
-    if y == "none":
-        print('There is a tie... \n')
-    else:
-        print('~~~~The winner is: ' + y + '~~~~\n')
+    # if y == "none":
+    #     print('There is a tie... \n')
+    # else:
+    #     print('~~~~The winner is: ' + y + '~~~~\n')
+    while y == "none":
+        # if there is a tie, keep matching until the tie breaks
+        print('now, your pick again! (remember to type lower-case letters): ')
+        x = input()
+        y = get_winner(x)
+    # after the tie breaks, declare the winner
+    print('~~~~The winner is: ' + y + '~~~~\n')
+
+
 
 
 if __name__ == '__main__':
